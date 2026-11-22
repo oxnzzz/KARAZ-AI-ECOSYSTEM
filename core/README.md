@@ -19,7 +19,7 @@ The Core layer supports the entire ecosystem:
 
 ## 3. Core Capability Areas
 
-The following capabilities define the planned Core scope:
+The following ten capability areas define the planned Core scope. This is the authoritative list; `docs/DEVELOPMENT-ROADMAP.md` Phase 1 follows it.
 
 ### 3.1 Quality Guardian
 

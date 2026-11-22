@@ -44,16 +44,18 @@ Exit criteria:
 
 Goal: Define reusable cross-domain operating capabilities and contracts before building domain frameworks.
 
-Planned capability areas:
+Planned capability areas. The authoritative list is `core/README.md` §3; the ten areas below use its names and order.
 
-* Quality assurance and evidence verification.
-* Cost and resource awareness.
-* Privacy and security.
-* Task understanding and planning.
-* Tool and permission discipline.
-* Error handling and fallback behavior.
-* Execution tracking and honest status reporting.
-* Capability discovery and routing contracts.
+* Quality Guardian: quality assurance and evidence verification.
+* Cost Controller: cost and resource awareness.
+* Privacy and Security.
+* Task Understanding and Planning.
+* Tool and Permission Discipline.
+* Fallback and Error Management: error handling and fallback behavior.
+* Execution Tracking: execution tracking and honest status reporting.
+* Capability Registry and Routing: contracts for registering, selecting, and handing off among registered capabilities. This does not include acquiring new capabilities.
+* Conflict Resolution.
+* Regression and Consistency Testing.
 
 Exit criteria:
 
@@ -214,9 +216,22 @@ Dependencies may justify adjusting the order, but changes should be documented.
 
 ## 7. Current Status
 
-Current phase: Phase 0 — Foundation and Governance. Its exit criteria have not yet been formally recorded as met.
+Phase 0 — Foundation and Governance is complete; its exit criteria are recorded below. Phase 1 — Core Operating Standards is the next phase and has started: one of the ten core capability areas (Quality Guardian, version 0.3.0) exists as a draft. It is not validated or released. The other nine areas have no specification yet.
 
-Phase 1 — Core Operating Standards has started: one of the ten planned core capabilities (Quality Guardian, version 0.3.0) exists as a draft. It is not validated or released. The other core capabilities have not been started.
+Work packages are named after the phase they belong to, for example Phase 1 / WP-1.1. The labels P0, P1, and P2 below name three completed work packages. They are not phase numbers.
+
+### Phase 0 exit criteria check
+
+Checked against `main` commit `e1fa0e199459107a03675421d784f0dd6170b728`. The check was made by an AI assistant. It becomes the owner's decision when the owner approves the pull request that records it.
+
+| Exit criterion | How it was checked | Result |
+|---|---|---|
+| Required foundation documents exist and are internally consistent | The documents exist: `README.md`, `docs/ARCHITECTURE.md`, `docs/SKILL-STANDARD.md`, `docs/IMPORT-AND-VERIFICATION.md`, this roadmap, `CHANGELOG.md`, and both registries. A hand cross-check of the documents found one inconsistency (this roadmap listed eight Phase 1 capability areas, `core/README.md` ten) and stale status text. Both are corrected in the pull request that records this check. | Met, with the residual note below |
+| Registry files use valid, parseable YAML | Structural validator: 0 errors and 0 warnings; the `validate` workflow passes | Met |
+| Identity independence and security principles are explicit | `docs/ARCHITECTURE.md` §2 and §8, §2 of this roadmap, and `README.md`; the reserved-key check (NR-4) tests key names only | Met |
+| No secrets or private user information in tracked files | Gitleaks scan `docs/evidence/EV-20261121-01.md` (reviewed; full history of 13 refs and the tree at `87eb795`; 0 findings; limitations stated in the record). A text search of the tracked files for e-mail addresses and the owner's personal identifiers found none outside a test fixture. A clean default-ruleset scan is not proof that no secret exists. | Met, within those limits |
+
+Residual note: `docs/evidence/EV-20261121-01.md` was reviewed after most of its text was written. Parts of its prose (section 1, the "Not reviewed" limitation in section 6) still say it is unreviewed, and section 8 does not list the review edit. Its `verification` fields are authoritative (`docs/EVIDENCE-MODEL.md` §6). The record is not edited after review (§7); how to resolve this is for the owner to decide.
 
 Two work packages have been carried out alongside the phases above. P0 (truthful records) aligned the repository's status text and records with its actual state. P1 (portable skill foundation) pulled forward only the structural parts of two later phases:
 
@@ -225,7 +240,7 @@ Two work packages have been carried out alongside the phases above. P0 (truthful
 
 Phases 4 and 5 remain open. P1 does not validate or release any skill.
 
-P2 (evidence and validation layer) is in progress. It pulls forward the evidence and release-gate part of Phase 5: an evidence and provenance model, documentation alignment, validator checks for the `validated` and `released` statuses, tests, and a one-off repository security scan. Delivered so far: the evidence model (`docs/EVIDENCE-MODEL.md`), the requirements EV-1 and EV-2 (`docs/SKILL-STANDARD.md` §14), the validator checks KZ-G001 and KZ-G002 for the declarations (the validator now has 30 checks), and one repository security scan with Gitleaks 8.30.1, recorded as `docs/evidence/EV-20261121-01.md` (0 findings; unreviewed). The scan has not been reviewed by a human, so `repository_security_scan` remains `not_run` in the registry and no skill can use it yet.
+P2 (evidence and validation layer) is complete. It pulled forward the evidence and release-gate part of Phase 5: an evidence and provenance model, documentation alignment, validator checks for the `validated` and `released` statuses, tests, and a one-off repository security scan. Delivered: the evidence model (`docs/EVIDENCE-MODEL.md`), the requirements EV-1 and EV-2 (`docs/SKILL-STANDARD.md` §14), the validator checks KZ-G001 and KZ-G002 for the declarations (the validator now has 30 checks), and one repository security scan with Gitleaks 8.30.1, recorded as `docs/evidence/EV-20261121-01.md` (0 findings), which the repository owner reviewed on 2026-11-22. `repository_security_scan` remains `not_run` in the registry. Declaring it `recorded` is a separate step that needs the owner's approval, and the validator requires it only for `released` skills.
 
 P2 does not include specialist skills, meta-skills, specialist migration, platform adapters, shared-learning infrastructure, a knowledge system, orchestration, routing, new core capabilities, a unified control center, proactive autonomous operations, or importing any source repository. Those remain later work. The evidence model leaves room for them (`docs/EVIDENCE-MODEL.md` §11) and does not implement them.
 
