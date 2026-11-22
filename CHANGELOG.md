@@ -33,6 +33,8 @@ The repository version (`ecosystem.version` in `registry/skills.yaml`) and each 
 
 ### Changed
 
+* Core layer design (Phase 1 / WP-1.1): `core/DESIGN.md` (responsibility matrix, boundaries and precedence, classification of the ten areas, reference model, scope boundaries, room for later work) and `core/SPEC-TEMPLATE.md` (lean specification template), both draft and normative. `core/README.md` (§3, §7, §8) and `docs/DEVELOPMENT-ROADMAP.md` §7 point to them. No skill is registered; `registry/skills.yaml` and `core/quality-guardian/` are unchanged.
+* `registry/compatibility.yaml`: platforms `claude` and `manus` declared as `future`. This records that the platforms are reserved. It makes no compatibility or adoption claim, and no adapter exists.
 * Phase 0 exit criteria recorded as met (`docs/DEVELOPMENT-ROADMAP.md` §7). The roadmap's Phase 1 capability list now matches the ten areas of `core/README.md` §3, which is the authoritative list. Work packages are named by phase (Phase 1 / WP-1.x).
 * Status text updated after the first evidence record was reviewed and merged (`README.md`, `docs/DEVELOPMENT-ROADMAP.md` §7, `docs/EVIDENCE-MODEL.md` §12, this file).
 * Foundation documents converted to Markdown (formatting only; wording unchanged).
