@@ -21,6 +21,16 @@ platforms:
     adapter: "adapters/grok/"
     notes: "Reserved for future integration."
 
+  claude:
+    status: "future"
+    adapter: "adapters/claude/"
+    notes: "Reserved for future integration."
+
+  manus:
+    status: "future"
+    adapter: "adapters/manus/"
+    notes: "Reserved for future integration."
+
 compatibility_levels:
   - compatible
   - compatible_with_adaptation
