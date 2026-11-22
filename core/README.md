@@ -126,7 +126,7 @@ The Core layer has entered its specification phase.
 
 No individual Core capability should be considered implemented, validated, or released merely because it appears in this document.
 
-Quality Guardian (`quality-guardian/`) has a draft specification, version 0.3.0, with scenario-evaluation records. It is not validated or released. See `registry/skills.yaml`. The other capability areas listed above have no specification files yet.
+Quality Guardian (`quality-guardian/`) has a draft specification, version 0.3.0, with scenario-evaluation records. It is not validated or released. See `registry/skills.yaml`. Privacy and Security (`privacy-and-security/`) has a draft specification, version 0.1.0, with scenario test specifications that have not been executed. It is not validated or released. The other capability areas listed above have no specification files yet.
 
 The Core layer design ([DESIGN.md](DESIGN.md)) and the specification template ([SPEC-TEMPLATE.md](SPEC-TEMPLATE.md)) exist as draft normative documents. They register no skill and change no registry.
 

@@ -43,3 +43,17 @@ skills:
       results: "core/quality-guardian/tests/test-results.md"
       behavioral_scenario_evaluation: "recorded"
       repository_security_scan: "not_run"
+
+  - id: privacy-and-security
+    name: "Privacy and Security"
+    type: core
+    version: "0.1.0"
+    status: draft
+    path: "core/privacy-and-security/"
+    documentation: "core/privacy-and-security/SKILL.md"
+    dependencies: []
+    platform_compatibility: "registry/compatibility.yaml"
+    validation:
+      tests: "core/privacy-and-security/tests/test-cases.md"
+      behavioral_scenario_evaluation: "not_run"
+      repository_security_scan: "not_run"

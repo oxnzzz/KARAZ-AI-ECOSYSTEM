@@ -57,3 +57,25 @@ skills:
         compatibility: unverified
         evidence: "Scenario evaluations QG-011 (skill 0.2.0), QG-012 and QG-013 (skill 0.3.0) are recorded in core/quality-guardian/tests/test-results.md."
         limitations: "The user supplied the skill text; Gemini did not retrieve the repository. Registration and activation were not verified. Complete responses are not preserved in this repository."
+
+  - skill_id: privacy-and-security
+    skill_version: "0.1.0"
+    platforms:
+      generic:
+        compatibility: unverified
+        limitations: "Not tested on this platform. Retrieval, understanding, registration, activation, and execution are all unverified."
+      chatgpt:
+        compatibility: unverified
+        limitations: "Not tested on this platform. Retrieval, understanding, registration, activation, and execution are all unverified."
+      gemini:
+        compatibility: unverified
+        limitations: "Not tested on this platform. Retrieval, understanding, registration, activation, and execution are all unverified."
+      grok:
+        compatibility: unverified
+        limitations: "Not tested on this platform. Retrieval, understanding, registration, activation, and execution are all unverified."
+      claude:
+        compatibility: unverified
+        limitations: "Not tested on this platform. Retrieval, understanding, registration, activation, and execution are all unverified."
+      manus:
+        compatibility: unverified
+        limitations: "Not tested on this platform. Retrieval, understanding, registration, activation, and execution are all unverified."
