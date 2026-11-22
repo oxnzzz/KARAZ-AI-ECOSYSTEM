@@ -218,6 +218,8 @@ Dependencies may justify adjusting the order, but changes should be documented.
 
 Phase 0 — Foundation and Governance is complete; its exit criteria are recorded below. Phase 1 — Core Operating Standards is the next phase and has started: one of the ten core capability areas (Quality Guardian, version 0.3.0) exists as a draft. It is not validated or released. The other nine areas have no specification yet.
 
+Phase 1 / WP-1.1 (core layer design) adds `core/DESIGN.md` and `core/SPEC-TEMPLATE.md`: the responsibility matrix, the boundary and precedence model, the classification of the ten areas, the reference model, and a lean specification template. The ten areas are not ten registered skills. WP-1.1 registers no skill and changes no skill registry. The classification of Cost Controller and of Regression and Consistency Testing is resolved when each is specified.
+
 Work packages are named after the phase they belong to, for example Phase 1 / WP-1.1. The labels P0, P1, and P2 below name three completed work packages. They are not phase numbers.
 
 ### Phase 0 exit criteria check

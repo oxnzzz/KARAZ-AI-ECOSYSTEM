@@ -63,6 +63,8 @@ Establishes methods for checking that changes do not silently break previously v
 
 These capability areas are planned components. Their individual specifications and validation status must be maintained separately.
 
+The ten areas are areas of responsibility. They are not ten registered skills. [DESIGN.md](DESIGN.md) sets out the responsibility of each area, how the areas relate, and how each is classified as a normative standard, an operational capability, or a registered skill.
+
 ## 4. Responsibility Boundaries
 
 Core standards must:
@@ -116,7 +118,7 @@ The Core layer is expected to grow into independently documented components, for
 * conflict-resolver/
 * regression-testing/
 
-These directories should be created only when their actual documentation and implementation are ready.
+These directories should be created only when their actual documentation and implementation are ready. The list names candidate directories. A directory is created only for an area that is classified as an operational capability and registered as a skill ([DESIGN.md](DESIGN.md) §5). An area classified as a normative standard is documented in [DESIGN.md](DESIGN.md) and is not given a directory. Specifications follow [SPEC-TEMPLATE.md](SPEC-TEMPLATE.md).
 
 ## 8. Current Status
 
@@ -125,5 +127,7 @@ The Core layer has entered its specification phase.
 No individual Core capability should be considered implemented, validated, or released merely because it appears in this document.
 
 Quality Guardian (`quality-guardian/`) has a draft specification, version 0.3.0, with scenario-evaluation records. It is not validated or released. See `registry/skills.yaml`. The other capability areas listed above have no specification files yet.
+
+The Core layer design ([DESIGN.md](DESIGN.md)) and the specification template ([SPEC-TEMPLATE.md](SPEC-TEMPLATE.md)) exist as draft normative documents. They register no skill and change no registry.
 
 Each capability will be developed and reviewed independently.
