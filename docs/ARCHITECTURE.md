@@ -100,7 +100,8 @@ KARAZ-AI-ECOSYSTEM/
 │   ├── SKILL-STANDARD.md
 │   ├── IMPORT-AND-VERIFICATION.md
 │   ├── EVIDENCE-MODEL.md
-│   └── DEVELOPMENT-ROADMAP.md
+│   ├── DEVELOPMENT-ROADMAP.md
+│   └── evidence/
 ├── core/
 ├── meta-skills/
 ├── specialist-skills/

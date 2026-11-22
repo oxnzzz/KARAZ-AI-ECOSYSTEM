@@ -80,7 +80,7 @@ This repository is in its foundation-building phase.
 
 The architecture, development standard, import and verification standard, and initial registries are established. JSON Schemas, a read-only structural validator, and structural tests run on every pull request. An evidence model (`docs/EVIDENCE-MODEL.md`) defines how evaluations and scans are recorded and verified.
 
-One core capability, Quality Guardian (version 0.3.0), exists as a draft. It has behavioral scenario evaluations on two platforms but has not been validated or released, and no repository security scan has been run. Specialist skills have not yet been migrated or released.
+One core capability, Quality Guardian (version 0.3.0), exists as a draft. It has behavioral scenario evaluations on two platforms but has not been validated or released. One repository security scan has been run and its summary recorded as unreviewed evidence (`docs/evidence/EV-20261121-01.md`); no human has reviewed it, so the registry still records the scan as not run. Specialist skills have not yet been migrated or released.
 
 See CHANGELOG.md for recorded changes.
 

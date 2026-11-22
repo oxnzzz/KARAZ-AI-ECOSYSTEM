@@ -29,6 +29,8 @@ The repository version (`ecosystem.version` in `registry/skills.yaml`) and each 
 * Validator checks `KZ-G001` (a `validated` or `released` skill declares `validation.behavioral_scenario_evaluation: "recorded"`) and `KZ-G002` (a `released` skill declares `validation.repository_security_scan: "recorded"`), both at ERROR level, with tests (`tests/structure/test_lifecycle_gate.py`). The validator now has 30 checks; the 28 earlier checks and the frozen baseline are unchanged. The checks read declarations only.
 * Future source-material research list, with the license, attribution, and provenance principle (`docs/DEVELOPMENT-ROADMAP.md` §7). Research sources only; none is a dependency and nothing was imported.
 
+* First evidence record, `docs/evidence/EV-20261121-01.md`: a repository security scan with Gitleaks 8.30.1 (official release binary, default ruleset, offline, redacted). It covered the full history of all 13 refs of a fresh mirror clone (43 commits) and the working tree at `main` commit `87eb795480c8768e1ffe8e8cb97dc5b042c30d2b`. Result: 0 findings in two runs each, byte-identical. The record is `unreviewed`, and states that the binary contains no embedded source-revision metadata, so its build provenance could not be tied to its source commit. The registry is unchanged: `repository_security_scan` stays `not_run`.
+
 ### Changed
 
 * Foundation documents converted to Markdown (formatting only; wording unchanged).
@@ -44,9 +46,9 @@ The repository version (`ecosystem.version` in `registry/skills.yaml`) and each 
 ### Notes
 
 * No skill is validated or released. `quality-guardian` remains a draft.
-* Quality Guardian results are behavioral scenario evaluations only. No repository security scan has been run.
+* Quality Guardian results are behavioral scenario evaluations only. A repository security scan has been run (`docs/evidence/EV-20261121-01.md`) but is unreviewed and not declared in the registry.
 * The structural validator checks structure only. A passing run, locally or in the `validate` workflow, does not validate or release any skill. No registry file or skill file was changed.
-* The evidence model is documentation, and the gates check declarations only. No evidence record in its format exists yet, and no repository security scan has been run.
+* The evidence model is documentation, and the gates check declarations only. One evidence record in its format exists (the unreviewed security scan above); no record has been reviewed.
 
 ## [0.1.0] - Initial Foundation
 

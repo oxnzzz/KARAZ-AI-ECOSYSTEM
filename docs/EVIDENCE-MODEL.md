@@ -139,7 +139,7 @@ An exception for a deliberate test fixture, such as the synthetic credentials in
 
 ## 10. Evidence recorded before this model
 
-The Quality Guardian records in `core/quality-guardian/tests/test-cases.md` and `core/quality-guardian/tests/test-results.md` predate this model. They are behavioral scenario evaluations, run in the same session that loaded the skill (ChatGPT) or on text supplied by a person (Gemini). Complete responses are not preserved in the repository. They are not converted into records and are not edited by this document. No repository security scan has been run.
+The Quality Guardian records in `core/quality-guardian/tests/test-cases.md` and `core/quality-guardian/tests/test-results.md` predate this model. They are behavioral scenario evaluations, run in the same session that loaded the skill (ChatGPT) or on text supplied by a person (Gemini). Complete responses are not preserved in the repository. They are not converted into records and are not edited by this document. They include no repository security scan; the first security-scan record is `docs/evidence/EV-20261121-01.md`.
 
 Describing that evidence in this model's terms does not upgrade it.
 
@@ -162,6 +162,6 @@ Each assistant keeps its own identity, personality, policies, tools, permissions
 
 ## 12. Current state
 
-* No evidence record in the format of §3 exists yet.
+* One evidence record in the format of §3 exists: `docs/evidence/EV-20261121-01.md`, a repository security scan (Gitleaks 8.30.1, 0 findings). Its verification status is `unreviewed`. Its limitations include that the scanner binary's build provenance could not be tied to its source commit.
 * `registry/skills.yaml` records `behavioral_scenario_evaluation: "recorded"` for `quality-guardian` on the basis of the earlier evidence in §10, and `repository_security_scan: "not_run"`.
 * The validator checks that declared values are legal and that declared files exist. For `validated` and `released` skills it also checks the declarations required by EV-1 and EV-2 (KZ-G001, KZ-G002). It does not read evidence records. Requirements for `validated` and `released` skills are in `docs/SKILL-STANDARD.md` §14.
