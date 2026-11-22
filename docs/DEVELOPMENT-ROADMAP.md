@@ -216,9 +216,11 @@ Dependencies may justify adjusting the order, but changes should be documented.
 
 ## 7. Current Status
 
-Phase 0 — Foundation and Governance is complete; its exit criteria are recorded below. Phase 1 — Core Operating Standards is the next phase and has started: one of the ten core capability areas (Quality Guardian, version 0.3.0) exists as a draft. It is not validated or released. The other nine areas have no specification yet.
+Phase 0 — Foundation and Governance is complete; its exit criteria are recorded below. Phase 1 — Core Operating Standards is the next phase and has started: two of the ten core capability areas exist as drafts: Quality Guardian (version 0.3.0) and Privacy and Security (version 0.1.0). Neither is validated or released. The other eight areas have no specification yet.
 
 Phase 1 / WP-1.1 (core layer design) adds `core/DESIGN.md` and `core/SPEC-TEMPLATE.md`: the responsibility matrix, the boundary and precedence model, the classification of the ten areas, the reference model, and a lean specification template. The ten areas are not ten registered skills. WP-1.1 registers no skill and changes no skill registry. The classification of Cost Controller and of Regression and Consistency Testing is resolved when each is specified.
+
+Phase 1 / WP-1.2 specifies and registers `privacy-and-security` (draft, 0.1.0, `dependencies: []`) with scenario test specifications PS-001 to PS-012. The scenarios have not been executed and no evidence is recorded for them, so its `behavioral_scenario_evaluation` and `repository_security_scan` are `not_run`. Phase 1 / WP-1.3 (Tool and Permission Discipline) is next, and the Phase 1 review checkpoint follows it.
 
 Work packages are named after the phase they belong to, for example Phase 1 / WP-1.1. The labels P0, P1, and P2 below name three completed work packages. They are not phase numbers.
 

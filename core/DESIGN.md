@@ -86,7 +86,7 @@ This classification is provisional where marked. It is applied to each area when
 | Area | Classification | Reasoning |
 |---|---|---|
 | Quality Guardian | Registered skill (exists, draft, 0.3.0) | Passes all four criteria. |
-| Privacy and Security | Candidate operational capability | An observable procedure, testable, and Quality Guardian already defers to it. |
+| Privacy and Security | Registered skill (draft, 0.1.0, registered in Phase 1 / WP-1.2) | It passes all four criteria: an observable procedure, testable, an independent lifecycle, and Quality Guardian already defers to it. |
 | Tool and Permission Discipline | Candidate operational capability | An observable procedure before using a tool, testable, and other capabilities rely on it. |
 | Execution Tracking | Candidate operational capability | An observable reporting procedure, testable, and other skills rely on its vocabulary. |
 | Fallback and Error Management | Candidate operational capability | An observable procedure when something fails, and testable. |
