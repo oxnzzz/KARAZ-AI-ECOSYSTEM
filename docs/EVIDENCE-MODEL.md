@@ -162,6 +162,6 @@ Each assistant keeps its own identity, personality, policies, tools, permissions
 
 ## 12. Current state
 
-* One evidence record in the format of §3 exists: `docs/evidence/EV-20261121-01.md`, a repository security scan (Gitleaks 8.30.1, 0 findings). Its verification status is `unreviewed`. Its limitations include that the scanner binary's build provenance could not be tied to its source commit.
+* One evidence record in the format of §3 exists: `docs/evidence/EV-20261121-01.md`, a repository security scan (Gitleaks 8.30.1, 0 findings). Its verification status is `reviewed` (reviewer: the repository owner, 2026-11-22). Some of its prose was written before the review and still says it is unreviewed; the `verification` fields are authoritative (§6), and the record is not edited after review (§7). Its limitations include that the scanner binary's build provenance could not be tied to its source commit.
 * `registry/skills.yaml` records `behavioral_scenario_evaluation: "recorded"` for `quality-guardian` on the basis of the earlier evidence in §10, and `repository_security_scan: "not_run"`.
 * The validator checks that declared values are legal and that declared files exist. For `validated` and `released` skills it also checks the declarations required by EV-1 and EV-2 (KZ-G001, KZ-G002). It does not read evidence records. Requirements for `validated` and `released` skills are in `docs/SKILL-STANDARD.md` §14.
