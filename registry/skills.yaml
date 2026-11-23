@@ -57,3 +57,17 @@ skills:
       tests: "core/privacy-and-security/tests/test-cases.md"
       behavioral_scenario_evaluation: "not_run"
       repository_security_scan: "not_run"
+
+  - id: tool-discipline
+    name: "Tool and Permission Discipline"
+    type: core
+    version: "0.1.0"
+    status: draft
+    path: "core/tool-discipline/"
+    documentation: "core/tool-discipline/SKILL.md"
+    dependencies: []
+    platform_compatibility: "registry/compatibility.yaml"
+    validation:
+      tests: "core/tool-discipline/tests/test-cases.md"
+      behavioral_scenario_evaluation: "not_run"
+      repository_security_scan: "not_run"
