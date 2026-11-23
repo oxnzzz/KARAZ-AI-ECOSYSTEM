@@ -11,6 +11,7 @@ The repository version (`ecosystem.version` in `registry/skills.yaml`) and each 
 ### Added
 
 * Core operating standards specification (`core/README.md`).
+* `tool-discipline` core skill, draft, version 0.1.0 (`core/tool-discipline/SKILL.md`), with its normative permission model (`core/PERMISSION-MODEL.md`) and scenario test specifications TD-001 to TD-028 (`core/tool-discipline/tests/test-cases.md`). It follows `core/SPEC-TEMPLATE.md` and has `dependencies: []`. Registry entry and compatibility record added; every declared platform is `unverified`. The scenarios have not been executed, and `behavioral_scenario_evaluation` and `repository_security_scan` are `not_run`.
 * `privacy-and-security` core skill, draft, version 0.1.0 (`core/privacy-and-security/SKILL.md`), with scenario test specifications PS-001 to PS-012 (`core/privacy-and-security/tests/test-cases.md`). It follows `core/SPEC-TEMPLATE.md`, uses generic sensitivity categories only, and has `dependencies: []`. Registry entry and compatibility record added; every declared platform is `unverified`. The scenarios have not been executed, and `behavioral_scenario_evaluation` and `repository_security_scan` are `not_run`.
 * `quality-guardian` core skill, draft. Version history: 0.1.0 (initial specification), 0.2.0 (security and secret-exposure review), 0.3.0 (credential authenticity, scanning-tool guidance, machine-readable reports).
 * Quality Guardian test specifications (QG-001 to QG-013) and scenario-evaluation records.
@@ -50,8 +51,8 @@ The repository version (`ecosystem.version` in `registry/skills.yaml`) and each 
 
 ### Notes
 
-* No skill is validated or released. `quality-guardian` and `privacy-and-security` are drafts.
-* The `privacy-and-security` scenario tests are specifications only. None has been executed and no evidence is recorded for them.
+* No skill is validated or released. `quality-guardian`, `privacy-and-security`, and `tool-discipline` are drafts.
+* The `privacy-and-security` and `tool-discipline` scenario tests are specifications only. None has been executed and no evidence is recorded for them.
 * Quality Guardian results are behavioral scenario evaluations only. A repository security scan has been run and reviewed by the repository owner (`docs/evidence/EV-20261121-01.md`), but it is not declared in the registry.
 * The structural validator checks structure only. A passing run, locally or in the `validate` workflow, does not validate or release any skill. No registry file or skill file was changed.
 * The evidence model is documentation, and the gates check declarations only. One evidence record in its format exists (the security scan above), and it has been reviewed by the repository owner.

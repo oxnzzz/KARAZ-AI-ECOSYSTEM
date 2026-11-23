@@ -79,3 +79,25 @@ skills:
       manus:
         compatibility: unverified
         limitations: "Not tested on this platform. Retrieval, understanding, registration, activation, and execution are all unverified."
+
+  - skill_id: tool-discipline
+    skill_version: "0.1.0"
+    platforms:
+      generic:
+        compatibility: unverified
+        limitations: "Not tested on this platform. Retrieval, understanding, registration, activation, and execution are all unverified."
+      chatgpt:
+        compatibility: unverified
+        limitations: "Not tested on this platform. Retrieval, understanding, registration, activation, and execution are all unverified."
+      gemini:
+        compatibility: unverified
+        limitations: "Not tested on this platform. Retrieval, understanding, registration, activation, and execution are all unverified."
+      grok:
+        compatibility: unverified
+        limitations: "Not tested on this platform. Retrieval, understanding, registration, activation, and execution are all unverified."
+      claude:
+        compatibility: unverified
+        limitations: "Not tested on this platform. Retrieval, understanding, registration, activation, and execution are all unverified."
+      manus:
+        compatibility: unverified
+        limitations: "Not tested on this platform. Retrieval, understanding, registration, activation, and execution are all unverified."

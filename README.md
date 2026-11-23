@@ -80,7 +80,7 @@ The foundation phase (Phase 0) is complete. The core operating standards (Phase 
 
 The architecture, development standard, import and verification standard, and initial registries are established. JSON Schemas, a read-only structural validator, and structural tests run on every pull request. An evidence model (`docs/EVIDENCE-MODEL.md`) defines how evaluations and scans are recorded and verified.
 
-Two core capabilities exist as drafts: Quality Guardian (version 0.3.0), which has behavioral scenario evaluations on two platforms, and Privacy and Security (version 0.1.0), whose scenario tests have not been executed. Neither has been validated or released. One repository security scan (Gitleaks, 0 findings) has been run, and its summary is recorded as evidence reviewed by the repository owner (`docs/evidence/EV-20261121-01.md`). The registry still records the scan as not run, because declaring it recorded is a separate step that needs the owner's approval. Specialist skills have not yet been migrated or released.
+Three core capabilities exist as drafts: Quality Guardian (version 0.3.0), which has behavioral scenario evaluations on two platforms, and Privacy and Security and Tool and Permission Discipline (both version 0.1.0), whose scenario tests have not been executed. None has been validated or released. One repository security scan (Gitleaks, 0 findings) has been run, and its summary is recorded as evidence reviewed by the repository owner (`docs/evidence/EV-20261121-01.md`). The registry still records the scan as not run, because declaring it recorded is a separate step that needs the owner's approval. Specialist skills have not yet been migrated or released.
 
 See CHANGELOG.md for recorded changes.
 
