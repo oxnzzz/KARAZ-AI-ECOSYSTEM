@@ -111,7 +111,7 @@ This capability owns the question of authorization and scope. It does not own:
 9. **Prepare the minimal form.** Prefer a dry run, a draft, a verified recovery copy, and the narrowest tool and operation.
 10. **Execute exactly what was authorized.** A materially different action needs a fresh approval ([PERMISSION-MODEL.md](../PERMISSION-MODEL.md) §7). If a call exceeds its grant, stop that call and do not reach the same result by another route.
 11. **Verify.** Do not assume success. Treat an unknown outcome as neither success nor failure, and never retry a non-idempotent action blindly ([PERMISSION-MODEL.md](../PERMISSION-MODEL.md) §10).
-12. **Record and report.** Keep a record in proportion to the weight of the action ([PERMISSION-MODEL.md](../PERMISSION-MODEL.md) §11). Report denials, requests, deviations, and side effects when they happen.
+12. **Record and report.** Keep a record in proportion to the weight of the action ([PERMISSION-MODEL.md](../PERMISSION-MODEL.md) §11). Report denials, requests, deviations, side effects, and every send or other external disclosure when they happen.
 
 **Decision rules.**
 
