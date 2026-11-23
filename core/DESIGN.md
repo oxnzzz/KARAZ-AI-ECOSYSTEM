@@ -50,6 +50,7 @@ Each area is defined by the one question it answers.
 | Execution Tracking, readiness decisions, and adoption stages | These are three separate vocabularies: work status, readiness for use, and platform adoption. They are not merged. |
 | Conflict Resolution and `core/README.md` §5 | The rules are in `core/README.md` §5. This area applies them and requires disclosure. It does not restate or replace them. |
 | Regression and Consistency Testing and the repository's structural tests | The Core area covers the behavior of a skill or an assistant against a previously verified baseline. Structural validation, the test suite, and the workflow belong to the repository (roadmap Phases 5 and 6). Neither side duplicates the other. |
+| Quality Guardian section 8 (Tool and Evidence Discipline) and Tool and Permission Discipline | Tool and Permission Discipline owns whether an action is available, authorized, and within scope ([PERMISSION-MODEL.md](PERMISSION-MODEL.md)). Quality Guardian 0.3.0 keeps its section 8, which states a shorter version of the same discipline, and stays unchanged for now. A Tool and Permission Discipline specification refers to those rules and does not duplicate them. Removing the duplication is left to a later Quality Guardian version. |
 
 ## 4. Boundaries and precedence
 
@@ -87,7 +88,7 @@ This classification is provisional where marked. It is applied to each area when
 |---|---|---|
 | Quality Guardian | Registered skill (exists, draft, 0.3.0) | Passes all four criteria. |
 | Privacy and Security | Registered skill (draft, 0.1.0, registered in Phase 1 / WP-1.2) | It passes all four criteria: an observable procedure, testable, an independent lifecycle, and Quality Guardian already defers to it. |
-| Tool and Permission Discipline | Candidate operational capability | An observable procedure before using a tool, testable, and other capabilities rely on it. |
+| Tool and Permission Discipline | Registered skill (draft, 0.1.0, registered in Phase 1 / WP-1.3) | It passes all four criteria: an observable procedure before using a tool, testable, an independent lifecycle, and other capabilities rely on it. Its normative model is [PERMISSION-MODEL.md](PERMISSION-MODEL.md), which is a document and is not registered. |
 | Execution Tracking | Candidate operational capability | An observable reporting procedure, testable, and other skills rely on its vocabulary. |
 | Fallback and Error Management | Candidate operational capability | An observable procedure when something fails, and testable. |
 | Task Understanding and Planning | Candidate operational capability | An observable procedure at the start of work, and testable. |
