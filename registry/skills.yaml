@@ -71,3 +71,17 @@ skills:
       tests: "core/tool-discipline/tests/test-cases.md"
       behavioral_scenario_evaluation: "not_run"
       repository_security_scan: "not_run"
+
+  - id: fallback-manager
+    name: "Fallback and Error Management"
+    type: core
+    version: "0.1.0"
+    status: draft
+    path: "core/fallback-manager/"
+    documentation: "core/fallback-manager/SKILL.md"
+    dependencies: []
+    platform_compatibility: "registry/compatibility.yaml"
+    validation:
+      tests: "core/fallback-manager/tests/test-cases.md"
+      behavioral_scenario_evaluation: "not_run"
+      repository_security_scan: "not_run"
