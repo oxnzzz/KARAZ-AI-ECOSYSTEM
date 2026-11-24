@@ -216,13 +216,15 @@ Dependencies may justify adjusting the order, but changes should be documented.
 
 ## 7. Current Status
 
-Phase 0 — Foundation and Governance is complete; its exit criteria are recorded below. Phase 1 — Core Operating Standards is the next phase and has started: three of the ten core capability areas exist as drafts: Quality Guardian (version 0.3.0), Privacy and Security (version 0.1.0), and Tool and Permission Discipline (version 0.1.0). None is validated or released. The other seven areas have no specification yet.
+Phase 0 — Foundation and Governance is complete; its exit criteria are recorded below. Phase 1 — Core Operating Standards is the next phase and has started: four of the ten core capability areas exist as drafts: Quality Guardian (version 0.3.0), Privacy and Security (version 0.1.0), Tool and Permission Discipline (version 0.1.0), and Fallback and Error Management (version 0.1.0). None is validated or released. The other six areas have no specification yet.
 
 Phase 1 / WP-1.1 (core layer design) adds `core/DESIGN.md` and `core/SPEC-TEMPLATE.md`: the responsibility matrix, the boundary and precedence model, the classification of the ten areas, the reference model, and a lean specification template. The ten areas are not ten registered skills. WP-1.1 registers no skill and changes no skill registry. The classification of Cost Controller and of Regression and Consistency Testing is resolved when each is specified.
 
 Phase 1 / WP-1.2 specifies and registers `privacy-and-security` (draft, 0.1.0, `dependencies: []`) with scenario test specifications PS-001 to PS-012. The scenarios have not been executed and no evidence is recorded for them, so its `behavioral_scenario_evaluation` and `repository_security_scan` are `not_run`.
 
-Phase 1 / WP-1.3 specifies and registers `tool-discipline` (draft, 0.1.0, `dependencies: []`) with its normative model `core/PERMISSION-MODEL.md` and scenario test specifications TD-001 to TD-028. The scenarios have not been executed and no evidence is recorded for them, so its `behavioral_scenario_evaluation` and `repository_security_scan` are `not_run`. The Phase 1 review checkpoint follows WP-1.3. No work package after WP-1.3 has started.
+Phase 1 / WP-1.3 specifies and registers `tool-discipline` (draft, 0.1.0, `dependencies: []`) with its normative model `core/PERMISSION-MODEL.md` and scenario test specifications TD-001 to TD-028. The scenarios have not been executed and no evidence is recorded for them, so its `behavioral_scenario_evaluation` and `repository_security_scan` are `not_run`.
+
+Phase 1 / WP-1.4 specifies and registers `fallback-manager` (name: Fallback and Error Management; draft, 0.1.0, `dependencies: []`) as one normative `SKILL.md` with scenario test specifications FM-001 to FM-026. It cites `core/PERMISSION-MODEL.md` and does not restate it. The scenarios have not been executed and no evidence is recorded for them, so its `behavioral_scenario_evaluation` and `repository_security_scan` are `not_run`. No work package after WP-1.4 has started.
 
 Work packages are named after the phase they belong to, for example Phase 1 / WP-1.1. The labels P0, P1, and P2 below name three completed work packages. They are not phase numbers.
 
