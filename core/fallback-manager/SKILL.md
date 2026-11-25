@@ -127,7 +127,7 @@ Seven operational classes are owned here:
 | Class | Meaning | Normal recovery |
 |---|---|---|
 | F1 Unavailable | A tool, capability, dependency, or external service is not callable or is down, including a tool that disappears mid-task | An alternative, a degraded result, or ask |
-| F2 Transient, known no effect | A rate limit, a refused connection, or a 5xx documented as no-effect | Retry |
+| F2 Transient, known no effect | A rate limit, a refused connection, or a 5xx documented as no-effect | Retry, only when section 4.4 allows it |
 | F3 Uncertain outcome | A timeout or a dropped connection after a possible effect, or an ambiguous response | Verify read-only first. Retry only if no effect is shown or the action is idempotent. |
 | F4 Unusable result | Empty when non-empty was expected, invalid, malformed, truncated, or of the wrong shape | An adjusted retry if justified, otherwise a degraded result or stop |
 | F5 Partial | Some units of the work are done and others failed | Section 4.5 |
@@ -178,6 +178,8 @@ Continuing unaffected safe work runs in parallel with every rung and is not itse
 * the action is C0, C1, or idempotent ([PERMISSION-MODEL.md](../PERMISSION-MODEL.md) §10);
 * the grant is intact and has not been revoked or expired;
 * budget remains, and no user restriction forbids it.
+
+Class F2 is a classification and does not by itself make a retry eligible. A documented no-effect error does not make a non-idempotent action idempotent, and it is not the read-only check of FR-13. Every condition above and [PERMISSION-MODEL.md](../PERMISSION-MODEL.md) §10 must still hold, so a send or another non-idempotent C3 action is not retried on that basis alone.
 
 **Idempotency (FR-13).** An action is treated as idempotent only on one of these bases: it is naturally idempotent (a C0 or C1 action, or an overwrite with identical state); the tool supports an idempotency key and the key was recorded for the first attempt; or a read-only check shows that no effect occurred. Unknown idempotency is treated as non-idempotent.
 
@@ -241,7 +243,14 @@ When the circuit breaker trips, stop calling that tool or service, and degrade o
 
 **FR-25.** A substitute check is labeled as a substitute. It is never reported as equivalent to the original verification ([DESIGN.md](../DESIGN.md) §4, item 6; [quality-guardian](../quality-guardian/SKILL.md) §9).
 
-**FR-26.** An alternative that fails any condition of FR-22 is a proposal and not an action. Tool and Permission Discipline classifies it, the gate runs if it discloses, and the user approves before anything happens. A disclosure-changing alternative, such as a minimized or redacted form that Privacy and Security offered, needs a gate result for its exact content and destination.
+**FR-26.** An alternative that fails any condition of FR-22 is a proposal and not an action. The order is fixed:
+
+1. Identify the alternative, its exact content, and its destination, and have Tool and Permission Discipline classify it.
+2. If it discloses, obtain the gate result for that exact content and destination ([PERMISSION-MODEL.md](../PERMISSION-MODEL.md) §6.1).
+3. Only after an affirmative result, ask for approval where approval is required.
+4. Act only when every applicable condition holds.
+
+When no result is available, do not ask the user to approve the disclosure. The assistant may tell the user that the alternative exists and what it would need, and may ask a question that is not an approval to disclose. A disclosure-changing alternative, such as a minimized or redacted form that Privacy and Security offered, needs a gate result for its exact content and destination.
 
 ### 4.7 Conflicting operation results
 
@@ -270,7 +279,7 @@ Unknown idempotency means non-idempotent. An unknown effect means an uncertain o
 
 ### 4.9 Fresh approval boundaries
 
-**FR-33.** Recovery needs a fresh approval, asked in one question, in these situations:
+**FR-33.** Recovery needs a fresh approval, asked in one question, in these situations. Where the alternative would disclose, the question is asked only after the gate result required by FR-26 is available ([PERMISSION-MODEL.md](../PERMISSION-MODEL.md) §6.1):
 
 | Situation | Why |
 |---|---|
