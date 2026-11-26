@@ -87,7 +87,7 @@ It applies again when new information changes the plan (section 4.7).
 
 **TP-004.** A candidate capability is not permission and not availability. Never claim that a tool is present, installed, or active, or that permission exists, unless context or an authoritative component supplies that fact. A fact that is supplied is attributed to its source, and Tool and Permission Discipline still checks it before use.
 
-**TP-005.** An expected output is not evidence. Never state a step as done, attempted, verified, or failed on the plan's own account, and never define a status vocabulary. A fact of that kind that context or another component supplies may be cited, and it is attributed to its source (TP-056).
+**TP-005.** An expected output is not evidence. Never state or decide, on the plan's own account, that a step was done, attempted, successful, verified, failed, or complete, and never define a status vocabulary. A fact of that kind that authoritative context or the owning component supplies may be reported with attribution to its source (TP-056). Reporting it does not make it the plan's own claim, does not extend it beyond what the source stated, and does not create a status vocabulary owned by this capability.
 
 **TP-006.** This capability does not compute or replace a gate result, assign an action class, decide a policy or safety refusal, classify a failure, retry, choose a recovery alternative, or select a capability with authority.
 
@@ -156,14 +156,14 @@ It applies again when new information changes the plan (section 4.7).
 | Tier | Rule |
 |---|---|
 | **1. Automatic** | Allowed only when all five hold: (a) all plausible readings produce the same steps and outputs, or differ only in cheap, reversible presentation choices; (b) no tier 3 matter is involved; (c) no user fact is contradicted; (d) the user's scope is preserved; (e) the assumption is recorded and disclosed. |
-| **2. Confirm first** | The readings diverge materially. Confirmation is required before the dependent work. Independent work may proceed. |
+| **2. Confirm first** | The readings diverge materially. Confirmation is required before the dependent work. Independent work may proceed. TP-021 also places here any assumption that is neither tier 1 nor tier 3. |
 | **3. Never assume** | The item remains unknown, the dependent step remains blocked, and the item is asked when it is needed. |
 
 **TP-019.** A tier 1 assumption needs all five conditions.
 
 **TP-020.** These are tier 3 and are never assumed: permissions, approvals, and grants; destinations and recipients; external disclosure authorization and a gate result; identity, access, and credentials; financial or legal commitments; safety-critical facts; the availability of a tool or capability; and whether a step occurred or what its outcome was.
 
-**TP-021.** A tier 2 assumption needs confirmation before dependent work. Independent work may proceed. There is no numeric threshold for "materially divergent".
+**TP-021.** A tier 2 assumption needs confirmation before dependent work. Independent work may proceed. There is no numeric threshold for "materially divergent". Any assumption that does not satisfy all five tier 1 conditions and is not classified as tier 3 under TP-020 is treated as tier 2 for planning purposes.
 
 **TP-022.** No assumption is justified by "reasonable" or "likely" alone. The justification must cite the tier 1 conditions that hold.
 
@@ -247,7 +247,7 @@ It applies again when new information changes the plan (section 4.7).
 | The same step can be done by other means inside the same grant | Not replanning. Fallback and Error Management owns it. |
 | A transient failure, a retry, or an alternative for the same step | Not replanning. Fallback and Error Management owns it. |
 
-**TP-043.** A replan is not a retry. It does not re-attempt an operation, reset an attempt budget or a circuit breaker of Fallback and Error Management, or re-run completed units. An identical operation in a new version is still the same operation for that capability.
+**TP-043.** A replan is not a retry. It does not re-attempt an operation or re-run completed units, and it is never used to circumvent, reset, or bypass an applicable retry, attempt, or circuit-breaker limit of Fallback and Error Management. How those limits apply is defined by that capability and not here.
 
 **TP-044.** A replan does not reproduce a blocked effect by another route ([fallback-manager](../fallback-manager/SKILL.md) FR-23, [PERMISSION-MODEL.md](../PERMISSION-MODEL.md) §10). A block is treated as a constraint. A replan carries no authorization and no gate result from an earlier version into a new action ([PERMISSION-MODEL.md](../PERMISSION-MODEL.md) §6.1, §7). A new action, destination, or content needs fresh authorization from Tool and Permission Discipline.
 
@@ -287,7 +287,7 @@ It applies again when new information changes the plan (section 4.7).
 
 **TP-055.** Tag each requirement, fact, assumption, ambiguity resolution, subtask, dependency, and replan with a basis and a reference. The bases are: user input, context, derived (with the source items), assumption, and component output (with the component named).
 
-**TP-056.** Cite a component output as that component's output. Never restate a gate result or an action class as this capability's own, and never reuse one after the content it covered has changed.
+**TP-056.** Cite a component output as that component's output. Never restate a gate result, an action class, or a supplied status fact as this capability's own, and never reuse one after the content it covered has changed.
 
 **TP-057.** No evidence record and no new evidence system is created. Plan notes are runtime notes, like the decision records of [PERMISSION-MODEL.md](../PERMISSION-MODEL.md) §11. They persist only where the user authorizes it and the platform supports it, are never stored in this public repository, and hold no credential or full sensitive content. No claim of validation is made.
 
@@ -364,7 +364,7 @@ Execution is correct when, in the scenarios of [tests/test-cases.md](tests/test-
 * a decomposition is acyclic with typed dependencies, and subtasks that mutate the same resource are not marked concurrent;
 * a disclosure step is ordered after its final content, lists the gate result and the authorization as external prerequisites, and no approval to disclose is requested before a gate result exists;
 * a clarification is never treated as an approval, an authorization, a gate result, or a confirmation;
-* a replan is not a retry, resets no budget, re-runs no completed unit, reproduces no blocked effect, and carries no authorization into a new action;
+* a replan is not a retry, circumvents no retry, attempt, or circuit-breaker limit, re-runs no completed unit, reproduces no blocked effect, and carries no authorization into a new action;
 * unnecessary questions are not asked, and the questions that are asked come in one message;
 * the plan labels are used for plan quality only, and no status vocabulary appears;
 * a plan holds no credential and no full sensitive content.
