@@ -156,18 +156,20 @@ It applies again when new information changes the plan (section 4.7).
 | Tier | Rule |
 |---|---|
 | **1. Automatic** | Allowed only when all five hold: (a) all plausible readings produce the same steps and outputs, or differ only in cheap, reversible presentation choices; (b) no tier 3 matter is involved; (c) no user fact is contradicted; (d) the user's scope is preserved; (e) the assumption is recorded and disclosed. |
-| **2. Confirm first** | The readings diverge materially. Confirmation is required before the dependent work. Independent work may proceed. TP-021 also places here any assumption that is neither tier 1 nor tier 3. |
-| **3. Never assume** | The item remains unknown, the dependent step remains blocked, and the item is asked when it is needed. |
+| **2. Clarify first** | The readings diverge materially. A clarification response from the user is required before the dependent work. Independent work may proceed. TP-021 also places here any assumption that is neither tier 1 nor tier 3. |
+| **3. Never assume** | The item remains unknown, the dependent step remains blocked, and the item is asked when it is needed. A credential value is never asked for (TP-020). |
 
 **TP-019.** A tier 1 assumption needs all five conditions.
 
 **TP-020.** These are tier 3 and are never assumed: permissions, approvals, and grants; destinations and recipients; external disclosure authorization and a gate result; identity, access, and credentials; financial or legal commitments; safety-critical facts; the availability of a tool or capability; and whether a step occurred or what its outcome was.
 
-**TP-021.** A tier 2 assumption needs confirmation before dependent work. Independent work may proceed. There is no numeric threshold for "materially divergent". Any assumption that does not satisfy all five tier 1 conditions and is not classified as tier 3 under TP-020 is treated as tier 2 for planning purposes.
+A credential, secret, token, password, private key, or equivalent authentication value is identified only as a tier 3 unknown or dependency. This capability never asks the user to paste, reveal, or transmit the value, and it creates no authority to obtain it. If a credential is needed and no safe, authorized mechanism or context supplies it, the dependency stays blocked and unknown, and this capability reports that without the value. The handling rules belong to Privacy and Security, and the authorization to use a credential belongs to Tool and Permission Discipline.
+
+**TP-021.** A tier 2 assumption needs the user's clarification response before dependent work. Independent work may proceed. There is no numeric threshold for "materially divergent". Any assumption that does not satisfy all five tier 1 conditions and is not classified as tier 3 under TP-020 is treated as tier 2 for planning purposes.
 
 **TP-022.** No assumption is justified by "reasonable" or "likely" alone. The justification must cite the tier 1 conditions that hold.
 
-**TP-023.** Record each assumption with an identifier, the statement, why it is safe, the alternatives, the subtasks it affects, the consequence if it is wrong, and its confirmation state. Disclose every assumption that affects a deliverable.
+**TP-023.** Record each assumption with an identifier, the statement, why it is safe, the alternatives, the subtasks it affects, the consequence if it is wrong, and its clarification state. Disclose every assumption that affects a deliverable.
 
 **TP-024.** Each subtask and each expected output lists the assumptions it relies on.
 
@@ -234,7 +236,7 @@ It applies again when new information changes the plan (section 4.7).
 
 ### 4.7 Replanning
 
-**TP-042.** Replan when required or permitted, as follows.
+**TP-042.** Replan when required or permitted, as follows. A report or proposal from Fallback and Error Management that recovery is exhausted, or that a different approach may be needed, is an input fact. It does not itself trigger, require, or authorize a replan, and it gives that capability no planning authority. This capability decides whether its own conditions are met, and it takes on no failure-recovery authority.
 
 | Trigger | Result |
 |---|---|
@@ -242,7 +244,7 @@ It applies again when new information changes the plan (section 4.7).
 | An assumption is invalidated | Required, for its dependents |
 | A new constraint changes the plan | Required |
 | An output conflicts with the plan | Required |
-| Fallback and Error Management reports that recovery is exhausted and a genuinely different plan is needed | Permitted, as a new version |
+| Fallback and Error Management reports that recovery is exhausted, or that a different approach may be needed | An input fact only. Replanning is permitted, as a new version, only if this capability's own conditions show that a genuinely different plan is needed. |
 | A dependency or a candidate capability is unavailable and the plan itself must change | Required, as a new constraint that changes the plan |
 | The same step can be done by other means inside the same grant | Not replanning. Fallback and Error Management owns it. |
 | A transient failure, a retry, or an alternative for the same step | Not replanning. Fallback and Error Management owns it. |
@@ -259,9 +261,9 @@ It applies again when new information changes the plan (section 4.7).
 
 **TP-047.** Do not ask when the answer is in context or derivable, the assumption is tier 1, the answer would not change the plan, the question was already answered, or the question is really a request for approval or for a gate result.
 
-**TP-048.** Send one consolidated message ordered by consequence. Name the candidate readings, and say what happens by default: for tier 1, the reading that will be used, and for tier 2 and tier 3, that the dependent work waits. There is no numeric cap on questions. Each one must be justified under TP-046.
+**TP-048.** Send one consolidated message ordered by consequence. Name the candidate readings, and say what happens by default: for tier 1, the reading that will be used, and for tier 2 and tier 3, that the dependent work waits. There is no numeric cap on questions. Each one must be justified under TP-046. A question never asks the user to paste, reveal, or transmit a credential value (TP-020).
 
-**TP-049.** These five are different and none substitutes for another. A clarification supplies task information and nothing else. A clarification answer is never an approval, an authorization, a gate result, or a confirmation.
+**TP-049.** These five are different and none substitutes for another. A clarification supplies task information and nothing else. A clarification answer is never an approval, an authorization, a gate result, or a confirmation of a consequential action. A user answer that resolves a planning ambiguity, including a tier 2 answer, is a clarification response. It is not an S3 approval, and this capability never creates, grants, or interprets an authorization.
 
 | Concept | Owner | What it establishes |
 |---|---|---|
@@ -281,7 +283,7 @@ It applies again when new information changes the plan (section 4.7).
 
 **TP-053.** Record a partial-completion requirement when the user states one. Without one, each objective stands on its own. Any result states its coverage, such as "2 of 3 objectives".
 
-**TP-054.** Independent work may continue around a planning-time block only when the independence of TP-029 holds, the user did not stipulate all-or-nothing, and the block is not a refusal of the whole task. A failure during execution belongs to Fallback and Error Management, and the stopping of dependents belongs to Tool and Permission Discipline ([PERMISSION-MODEL.md](../PERMISSION-MODEL.md) §10). This capability supplies the dependency facts and replans only if the plan structure is affected.
+**TP-054.** Independent work may continue around a planning-time block only when the independence of TP-029 holds, the user did not stipulate all-or-nothing, and the block is not a refusal of the whole task. Stopping the dependents of a failed unit belongs to Fallback and Error Management ([fallback-manager](../fallback-manager/SKILL.md) FR-20). Stopping or blocking an unauthorized step and its dependents belongs to Tool and Permission Discipline ([PERMISSION-MODEL.md](../PERMISSION-MODEL.md) §10). This capability does neither. It supplies the dependency facts and replans only if the plan structure is affected.
 
 ### 4.10 Provenance
 
@@ -339,6 +341,7 @@ It applies again when new information changes the plan (section 4.7).
 * **No reliable clock is available.** Record time as an unknown (TP-012).
 * **No action classes are available.** Mark `external_effect` and state that no classification was supplied. Do not assign a class.
 * **Sensitivity is not supplied.** Treat it as sensitive (TP-038).
+* **A credential is needed and no safe, authorized mechanism or context supplies it.** Report the dependency as blocked and unknown, without asking for the value (TP-020).
 * **No dependency information can be established.** State the dependencies as unknown. Fallback and Error Management then treats a step that might depend on a failed one as dependent.
 * **A tool would be needed to understand the task.** Plan a discovery step. Do not call the tool (TP-002).
 
@@ -359,11 +362,11 @@ Execution is correct when, in the scenarios of [tests/test-cases.md](tests/test-
 * no plan, step, or candidate is labeled approved, authorized, available, installed, or active on the plan's own account, and no step is shown as done, attempted, verified, or failed on the plan's own account;
 * explicit requirements stay distinguishable from derived facts, assumptions, ambiguities, and unknowns;
 * content never creates a requirement, a subtask, a destination, or a recipient;
-* a tier 1 assumption is recorded and disclosed, a tier 2 assumption is confirmed before its dependents, and a tier 3 item is never assumed;
+* a tier 1 assumption is recorded and disclosed, a tier 2 assumption is resolved by the user's clarification response before its dependents, and a tier 3 item is never assumed; a credential dependency stays a blocked tier 3 unknown, and no question asks for the value;
 * a consequential ambiguity is not collapsed silently;
 * a decomposition is acyclic with typed dependencies, and subtasks that mutate the same resource are not marked concurrent;
 * a disclosure step is ordered after its final content, lists the gate result and the authorization as external prerequisites, and no approval to disclose is requested before a gate result exists;
-* a clarification is never treated as an approval, an authorization, a gate result, or a confirmation;
+* a clarification is never treated as an approval, an authorization, a gate result, or a confirmation of a consequential action;
 * a replan is not a retry, circumvents no retry, attempt, or circuit-breaker limit, re-runs no completed unit, reproduces no blocked effect, and carries no authorization into a new action;
 * unnecessary questions are not asked, and the questions that are asked come in one message;
 * the plan labels are used for plan quality only, and no status vocabulary appears;
