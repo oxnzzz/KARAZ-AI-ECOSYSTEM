@@ -85,3 +85,17 @@ skills:
       tests: "core/fallback-manager/tests/test-cases.md"
       behavioral_scenario_evaluation: "not_run"
       repository_security_scan: "not_run"
+
+  - id: task-planning
+    name: "Task Understanding and Planning"
+    type: core
+    version: "0.1.0"
+    status: draft
+    path: "core/task-planning/"
+    documentation: "core/task-planning/SKILL.md"
+    dependencies: []
+    platform_compatibility: "registry/compatibility.yaml"
+    validation:
+      tests: "core/task-planning/tests/test-cases.md"
+      behavioral_scenario_evaluation: "not_run"
+      repository_security_scan: "not_run"
