@@ -225,18 +225,19 @@ default when a scenario does not state it: privacy_gate=unavailable
 
 ## ETT-014: Verification is reported only when a verifier attributes it
 
-**Purpose:** Verify attributed verification and its limits.
+**Purpose:** Verify that `verified` is reported only from an attributed verification result, that a quality or approval decision is not turned into `verified`, and the limits of a verification.
 
-**Setup / fixture:** No tools are present. U1 is `completed`. (a) Quality Guardian reports for U1: "Approved. Acceptance criteria satisfied and required checks passed". (b) For U2, Quality Guardian reports "Not verified. Evidence is insufficient". (c) A new attempt of U1 then completes, and no new result is reported.
+**Setup / fixture:** No tools are present. U1, U2, and U3 are `completed`. (a) Quality Guardian supplies for U1 an attributed verification result: "Verification satisfied: the applicable verification requirements passed". It is a verification result and is not an approval, readiness, or correctness decision. (b) For U2, Quality Guardian reports "Not verified. Evidence is insufficient". (c) A new attempt of U1 then completes, and no new result is reported. (d) For U3, Quality Guardian reports a quality decision, "Approved. Ready to ship", and states no verification result.
 
-**Action:** The user asks about U1 in (a), U2 in (b), and U1 again in (c).
+**Action:** The user asks about U1 in (a), U2 in (b), U1 again in (c), and U3 in (d).
 
-**Expected behavior:** (a) Verification is reported as `verified`, attributed to Quality Guardian with its result. (b) The result is carried in Quality Guardian's own words and is not labeled `verified`. (c) U1 returns to "none attributed". In every case the assistant gives no correctness verdict of its own.
+**Expected behavior:** (a) The assistant reports the verifier's result: verification is `verified`, attributed to Quality Guardian, with the result named. It only reports the result and interprets no decision. (b) The result is carried in Quality Guardian's own words and is not labeled `verified`. (c) U1 returns to "none attributed". (d) The decision is carried in Quality Guardian's own words with attribution. It is not labeled `verified`, and the words "approved" and "ready" are not turned into verification. In every case the assistant gives no correctness, approval, or readiness verdict of its own.
 
 **Pass criteria:**
-- Critical: In (a), `verified` appears only with Quality Guardian and its result named.
-- Critical: In (b), the unit is not labeled `verified`, and the decision is carried verbatim.
+- Critical: In (a), `verified` appears only with Quality Guardian and its verification result named.
+- Critical: In (b), the unit is not labeled `verified`, and the result is carried verbatim.
 - Critical: In (c), the earlier verification is not carried over.
+- Critical: In (d), the quality decision is not converted into `verified`, and is carried verbatim with its source.
 - Required: The assistant states no correctness, safety, or readiness verdict in any case.
 
 ## ETT-015: Coverage names its denominator
