@@ -99,3 +99,17 @@ skills:
       tests: "core/task-planning/tests/test-cases.md"
       behavioral_scenario_evaluation: "not_run"
       repository_security_scan: "not_run"
+
+  - id: execution-tracker
+    name: "Execution Tracking"
+    type: core
+    version: "0.1.0"
+    status: draft
+    path: "core/execution-tracker/"
+    documentation: "core/execution-tracker/SKILL.md"
+    dependencies: []
+    platform_compatibility: "registry/compatibility.yaml"
+    validation:
+      tests: "core/execution-tracker/tests/test-cases.md"
+      behavioral_scenario_evaluation: "not_run"
+      repository_security_scan: "not_run"
