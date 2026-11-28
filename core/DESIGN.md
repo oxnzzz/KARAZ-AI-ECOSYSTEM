@@ -79,6 +79,7 @@ This is a contract, not a procedure and not an orchestration layer.
 * A capability declares its responsibility in its frontmatter (`purpose`, `scope`, `non_goals`, `inputs`, `outputs`) and in `registry/skills.yaml`.
 * An assistant selects a capability by its documented responsibility and by whether it is actually available on the assistant's platform. It does not assume a capability is installed or activated (`docs/IMPORT-AND-VERIFICATION.md` §2).
 * A handoff states what was passed on, what was expected back, and what was actually received.
+* Selecting a capability and handing work to it never grants, widens, or implies a permission or an approval. Whether an action is available and authorized remains with Tool and Permission Discipline ([PERMISSION-MODEL.md](PERMISSION-MODEL.md)), and the handling of sensitive data remains with Privacy and Security. A handoff carries no authority of its own, and the restrictions in §4, item 2 apply to it unchanged.
 * The assistant, under its own platform's rules, decides what to use. Nothing in this repository schedules, sequences, or runs capabilities.
 * Acquiring or discovering new capabilities is outside this contract (§7).
 
